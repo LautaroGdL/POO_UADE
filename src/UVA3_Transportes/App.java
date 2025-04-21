@@ -1,6 +1,6 @@
 package UVA3_Transportes;
 
-public class Principal {
+public class App {
     public static void main(String[] args) {
         // Crear instancias de cada tipo de vehículo
         Auto auto = new Auto("Toyota", 120.0, "Nafta", 4);
