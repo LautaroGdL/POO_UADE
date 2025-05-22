@@ -1,41 +1,15 @@
-import UVA1_Automoviles.Auto;
-import UVA1_Automoviles.Motor;
-import UVA1_Automoviles.Rueda;
-import UVA2_Televisores.Televisor;
-import UVA2_Televisores.Tipo;
-
+//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
+        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
+        // to see how IntelliJ IDEA suggests fixing it.
+        System.out.printf("Hello and welcome!");
 
-        Motor motor = new Motor("Gasolina", 150);
-
-        Rueda[] ruedas = {
-                new Rueda("Michelin", 16),
-                new Rueda("Pirelli", 16),
-                new Rueda("Michelin", 16),
-                new Rueda("Michelin", 16)
-        };
-
-        Auto myAuto = new Auto("Ford", "Mustang", motor, ruedas);
-
-        myAuto.encenderAuto();
-        myAuto.inflarRuedas();
-
-        Tipo tipo = new Tipo("LED");
-        Televisor tele = new Televisor("LG", "M1", 2019, true, "4K", 60, tipo);
-
-        tele.imprimirDatos();
-        tele.encenderTelevisor();
-        tele.preguntarEstadoTelevisor();
-
-        // Creo una nueva tele de la misma marca
-        Televisor tele2 = new Televisor("LG", "M2", 2021, true, "1080p", 65, tipo);
-        tele2.imprimirDatos();
-        tele2.setMarca("Samsung");
-        tele2.imprimirDatos();
-
-        tele.encenderTelevisor();
-        tele.apagarTelevisor();
+        for (int i = 1; i <= 5; i++) {
+            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
+            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
+            System.out.println("i = " + i);
+        }
     }
-
 }
