@@ -4,11 +4,25 @@ import Models.*;
 import java.util.*;
 
 public class EmpresaElectricaService {
+    private static EmpresaElectricaService instancia; // 👈 única instancia
     private Map<Integer, Usuario> usuarios = new HashMap<>();
     private int contadorUsuarios = 1;
+
     private TarifaResidencial tarifaResidencial = new TarifaResidencial(120, 0.21f, 0.08f);
     private TarifaIndustrial tarifaIndustrial = new TarifaIndustrial(110, 0.21f, 0.035f);
 
+    // 👇 Constructor privado para evitar new EmpresaElectricaService() desde afuera
+    private EmpresaElectricaService() {}
+
+    // 👇 Método de acceso global
+    public static EmpresaElectricaService getInstance() {
+        if (instancia == null) {
+            instancia = new EmpresaElectricaService();
+        }
+        return instancia;
+    }
+
+    // -------- Métodos de negocio ------------
     public int crearUsuarioResidencial(String nom, int dni, String calle, int altura, int piso,
                                        String dpto, int cp, String loca, String pcia) {
         int nro = contadorUsuarios++;
@@ -21,7 +35,7 @@ public class EmpresaElectricaService {
                                       String calle, int altura, int piso, String dpto, int cp, String loca, String pcia) {
         int nro = contadorUsuarios++;
         UsuarioIndustrial u = new UsuarioIndustrial(nro, calle, altura, piso, dpto, cp, loca, pcia,
-                razon, cuit, iibb, condFiscal);
+                                                    razon, cuit, iibb, condFiscal);
         usuarios.put(nro, u);
         return nro;
     }

@@ -38,7 +38,7 @@ public class ConsultaConsumoView extends JFrame {
     }
 
     public static void main(String[] args) {
-        EmpresaElectricaService service = new EmpresaElectricaService();
+        EmpresaElectricaService service = EmpresaElectricaService.getInstance();
         int nro = service.crearUsuarioResidencial("Juan Perez", 12345678, "Av Siempre Viva", 742, 0, "A", 1000, "Springfield", "BsAs");
         service.registrarMedicion(nro, 2025, 1, 1000);
         service.registrarMedicion(nro, 2025, 2, 1150);
